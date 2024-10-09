@@ -1,18 +1,32 @@
 from random import *
 
-class Real:
+class RealNumber:
 
     def __init__(self):
-        number = randint(0,9)
-        real = randint(0,9)/10
-        mantissa = randint(1,3)
+        self.mantissa = 10**randint(1,2)
+        self.number = randint(11, 50)/self.mantissa
         self.sign = choice(["+", "-", "+", "-", "+", "-", "+", "-", "+", "-", "+", "-"])
-        self.number = (number + real)/(10*mantissa)
 
     def __str__(self):
-        return f"{self.sign}{self.number}"
+        if self.sign == "+":
+            return f"{self.number:.2f}"
+        else:
+            return f"{self.sign}{self.number:.2f}"
 
-n=10
+class RealQuestion:
+
+    def __init__(self,action):
+        if action == "*":
+            self.sign = "*"
+        else:
+            self.sign = choice(["+", "-", "+", "-", "+", "-", "+", "-", "+", "-", "+", "-"])
+        self.a = RealNumber()
+        self.b = RealNumber()
+
+    def __str__(self):
+        return f"{self.a} {self.sign} {self.b}"
+
+
+n = 20
 for x in range(n):
-    print(Real())
-
+    print(RealQuestion("+"))
