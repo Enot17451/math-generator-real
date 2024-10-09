@@ -13,6 +13,12 @@ class RealNumber:
         else:
             return f"{self.sign}{self.number:.2f}"
 
+    def printMinusBrackets(self):
+        if self.sign == "+":
+            return f"{self.number:.2f}"
+        else:
+            return f"({self.sign}{self.number:.2f})"
+
 class RealQuestion:
 
     def __init__(self,action):
@@ -24,7 +30,7 @@ class RealQuestion:
         self.b = RealNumber()
 
     def __str__(self):
-        return f"{self.a} {self.sign} {self.b}"
+        return f"{self.a} {self.sign} {self.b.printMinusBrackets()}"
 
 
 n = 20
