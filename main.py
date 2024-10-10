@@ -26,13 +26,13 @@ class RealQuestion:
             self.sign = "*"
         else:
             self.sign = choice(["+", "-", "+", "-", "+", "-", "+", "-", "+", "-", "+", "-"])
-        self.a = RealNumber()
-        self.b = RealNumber()
 
     def __str__(self):
-        return f"{self.a} {self.sign} {self.b.printMinusBrackets()}"
+        return f"{RealNumber()} {self.sign} {RealNumber()}"
 
 
 n = 20
 for x in range(n):
-    print(RealQuestion("+"))
+    for y in range(3):
+        print(f"{RealQuestion("+")}",end="\t\t")
+    print()
